@@ -14,17 +14,36 @@ jobs:
     # checkout the repository
     - uses: actions/checkout@v2
 
-    # build the application
+    # build the artifacts
     - name: LÖVE Build
+      id: love-build
       uses: nhartland/love-build@v1-beta3
       with:
         app_name: "MovieMonsters"
         love_version: "11.3"
 
     # Upload the resulting artifacts
-    - name: LÖVE upload
+    - name: LÖVE mac OSX upload
       uses: actions/upload-artifact@v1
       with:
-        name: love-build
+        name: mm_macos-build
+        path: ${{ steps.love-build.outputs.macos-filename }}
+
+    - name: LÖVE win32 upload
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_win32-build
+        path: ${{ steps.love-build.outputs.win32-filename }}
+
+    - name: LÖVE win64 upload
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_win64-build
+        path: ${{ steps.love-build.outputs.win64-filename }}
+
+    - name: .love file upload
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_love-build
         path: ${{ steps.love-build.outputs.love-filename }}
 
