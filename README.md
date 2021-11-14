@@ -8,3 +8,5 @@ This particular movie is about a monster and a city, however instead of playing 
 How would you play our monster? Do you cause lots of destruction and chaos, or are you just wanting a bite to eat? Do you just want to find a friendly person to hug? It isn't going to be easy when you have the whole city against you!
 
 *Note: This game is under heavy construction*
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
