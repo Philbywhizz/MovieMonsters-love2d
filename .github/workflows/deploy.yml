@@ -51,15 +51,18 @@ jobs:
         name: mm_love-build
         path: ${{ steps.love-build.outputs.love-filename }}
 
+    - name: Release dir
+      run: ls -l release
+
     - name: Release # on tag only
       uses: softprops/action-gh-release@v1
       #if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          MovieMonsters_macos.zip
-          MovieMonsters_win32.zip
-          MovieMonsters_win64.zip
-          MovieMonsters.love
+          release/MovieMonsters_macos.zip
+          release/MovieMonsters_win32.zip
+          release/MovieMonsters_win64.zip
+          release/MovieMonsters.love
         fail_on_unmatched_files: true
         draft: true
         name: "v0.0.0"
