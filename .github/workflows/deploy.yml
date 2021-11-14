@@ -53,7 +53,7 @@ jobs:
 
     - name: Extract changelog for latest version
       id: changelog
-      run: echo "::set-output name=EXTRACT::$(sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md)
+      run: echo "::set-output name=EXTRACT::$(sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md)"
 
     - name: Release # on tag only
       uses: softprops/action-gh-release@v1
