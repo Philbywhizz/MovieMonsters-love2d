@@ -6,3 +6,6 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 ## Unreleased
 ### Added
 - .luacheckrc configuration file for [luacheck](https://github.com/mpeterv/luacheck)
+
+## v0.0.0
+Nothing to see here
