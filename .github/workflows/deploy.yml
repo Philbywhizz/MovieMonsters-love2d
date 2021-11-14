@@ -12,17 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repository
-    - uses actions/checkout@v2
+    - uses: actions/checkout@v2
 
     # build the application
-    - uses nhartland/love-build@v1-beta3
-      id: love-build
+    - name: LÖVE Build
+      uses: nhartland/love-build@v1-beta3
       with:
         app_name: "MovieMonsters"
         love_version: "11.3"
 
     # Upload the resulting artifacts
-    - uses actions/upload-artifact@v1
+    - name: LÖVE upload
+    - uses: actions/upload-artifact@v1
       with:
         name: love-build
         path: ${{ steps.love-build.outputs.love-filename }}
