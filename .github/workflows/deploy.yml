@@ -52,7 +52,7 @@ jobs:
         path: ${{ steps.love-build.outputs.love-filename }}
 
     - name: Extract changelog for latest version
-      run: sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md > release/release-changelog.md
+      run: sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md > ${GITHUB_WORKSPACE}/release/release-changelog.md
 
     - name: Release # on tag only
       uses: softprops/action-gh-release@v1
