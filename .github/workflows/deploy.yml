@@ -66,6 +66,6 @@ jobs:
           release/MovieMonsters.love
         fail_on_unmatched_files: true
         draft: true
-        body: ${{ steps.changelog.outputs.$EXTRACT}}
+        body: ${{ steps.changelog.outputs.EXTRACT}}
         name: "v0.0.0"
         prerelease: true
