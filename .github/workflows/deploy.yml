@@ -23,7 +23,7 @@ jobs:
 
     # Upload the resulting artifacts
     - name: LÖVE upload
-    - uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v1
       with:
         name: love-build
         path: ${{ steps.love-build.outputs.love-filename }}
