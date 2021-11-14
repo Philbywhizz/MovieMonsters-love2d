@@ -1,7 +1,7 @@
 #
 # Github action that creates a .love artifact
 #
-name: Deploy .love
+name: Generate a release
 
 on:
   # Only do manual triggers while developing workflow
@@ -12,10 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     # checkout the repository
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-    # build the artifacts
-    - name: LÖVE Build
+    # Test
+    # TODO: I need to add a testing/checking phase here
+
+    # Build
+    - name: Build
       id: love-build
       uses: nhartland/love-build@v1-beta3
       with:
@@ -23,34 +27,40 @@ jobs:
         love_version: "11.3"
 
     # Upload the resulting artifacts
-    - name: LÖVE mac OSX upload
+    - name: Artifact for OSX
       uses: actions/upload-artifact@v1
       with:
         name: mm_macos-build
         path: ${{ steps.love-build.outputs.macos-filename }}
 
-    - name: LÖVE win32 upload
+    - name: Artifact for win32
       uses: actions/upload-artifact@v1
       with:
         name: mm_win32-build
         path: ${{ steps.love-build.outputs.win32-filename }}
 
-    - name: LÖVE win64 upload
+    - name: Artifact for win64
       uses: actions/upload-artifact@v1
       with:
         name: mm_win64-build
         path: ${{ steps.love-build.outputs.win64-filename }}
 
-    - name: .love file upload
+    - name: Artifact for .love file
       uses: actions/upload-artifact@v1
       with:
         name: mm_love-build
         path: ${{ steps.love-build.outputs.love-filename }}
 
-    - name: Release when on a tag
-      uses: fnkr/github-action-ghr@v1
-#      if: startsWith(github.ref, 'refs/tags/')
-      env:
-        GHR_PATH: release
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+    - name: Release # on tag only
+      uses: softprops/action-gh-release@v1
+      #if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: |
+          MovieMonsters_macos.zip
+          MovieMonsters_win32.zip
+          MovieMonsters_win64.zip
+          MovieMonsters.love
+        fail_on_unmatched_files: true
+        draft: true
+        name: "v0.0.0"
+        prerelease: true
