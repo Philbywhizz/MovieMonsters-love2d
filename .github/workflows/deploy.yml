@@ -1,0 +1,29 @@
+#
+# Github action that creates a .love artifact
+#
+name: Deploy .love
+
+on:
+  # Only do manual triggers while developing workflow
+  workflow_dispatch:
+
+jobs:
+  build-MovieMonsters
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repository
+    - uses actions/checkout@v2
+
+    # build the application
+    - uses nhartland/love-build@v1-beta3
+      id: love-build
+      with:
+        app_name: "MovieMonsters"
+        love_version: "11.3"
+
+    # Upload the resulting artifacts
+    - uses actions/upload-artifact@v1
+      with:
+        name: love-build
+        path: ${{ steps.love-build.outputs.love-filename }}
+
