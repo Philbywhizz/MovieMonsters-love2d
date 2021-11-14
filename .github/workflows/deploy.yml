@@ -53,7 +53,10 @@ jobs:
 
     - name: Extract changelog for latest version
       id: changelog
-      run: echo "::set-output name=EXTRACT::$(sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md)"
+      run: |
+        echo "CHANGES<<EOF" >> $GITHUB_ENV
+        sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
 
     - name: Release # on tag only
       uses: softprops/action-gh-release@v1
@@ -66,6 +69,6 @@ jobs:
           release/MovieMonsters.love
         fail_on_unmatched_files: true
         draft: true
-        body: ${{ steps.changelog.outputs.EXTRACT}}
+        body: ${{ env.CHANGES }}
         name: "v0.0.0"
         prerelease: true
