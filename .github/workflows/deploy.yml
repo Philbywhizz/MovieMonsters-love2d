@@ -71,6 +71,3 @@ jobs:
         draft: true
         body: |
           ${{ env.CHANGES }}
-        # body_path: ${{ github.workspace }}/CHANGELOG.md
-        name: "v0.0.0"
-        prerelease: true
