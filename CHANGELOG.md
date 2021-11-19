@@ -5,11 +5,11 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 
 ## Unreleased
 ### Added
-- .luacheckrc configuration file for [luacheck](https://github.com/mpeterv/luacheck)
-- Github community standards documentation
-- [inspect](https://github.com/kikito/inspect.lua) library added to the project
-- [lovebird](https://github.com/rxi/lovebird) library added to the project
-- [gamestate](https://github.com/HDictus/hump/tree/temp-master) library added
-
+- .luacheckrc configuration file for [luacheck](https://github.com/mpeterv/luacheck).
+- Github community standards documentation.
+- [inspect](https://github.com/kikito/inspect.lua) library added to the project.
+- [lovebird](https://github.com/rxi/lovebird) library added to the project.
+- [gamestate](https://github.com/HDictus/hump/tree/temp-master) library added.
+- [concord](https://github.com/Tjakka5/Concord) ECS library added.
 ## v0.0.0
 Nothing to see here

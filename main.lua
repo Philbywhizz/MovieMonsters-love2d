@@ -3,6 +3,16 @@
 ---
 
 inspect = require "lib.inspect"
+local Concord = require("lib.concord")
+
+-- Modules
+local Entity     = Concord.entity
+local Component  = Concord.component
+local System     = Concord.system
+local World      = Concord.world
+
+-- Containers
+local Components  = Concord.components
 
 print(inspect("Hello"))
 function love.draw()
