@@ -8,5 +8,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 - .luacheckrc configuration file for [luacheck](https://github.com/mpeterv/luacheck)
 - Github community standards documentation
 - [inspect](https://github.com/kikito/inspect.lua) library added to the project
+- [lovebird](https://github.com/rxi/lovebird) library added to the project
+
 ## v0.0.0
 Nothing to see here

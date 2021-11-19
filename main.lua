@@ -9,6 +9,10 @@ function love.draw()
     love.graphics.print("Movie Monster", love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
 end
 
+function love.update(dt)
+    require("lib.lovebird").update()
+end
+
 function love.keypressed(key)
     -- Global keys
     if key == "escape" then
