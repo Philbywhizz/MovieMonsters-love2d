@@ -15,6 +15,9 @@ ranges = true
 -- enable the cache
 cache = true
 
+-- disable warnings about unused self
+self = false
+
 -- disable warnings about secondary unused variables
 unused_secondaries = false
 
