@@ -1,0 +1,74 @@
+#
+# Github action that triggers when a release is created
+#
+name: Release workflow
+
+# Trigger on a release
+on: release
+
+jobs:
+  build-MovieMonsters:
+    runs-on: ubuntu-latest
+    steps:
+    # checkout the repository
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Test
+    - name: LuaCheck
+      uses: nebularg/actions-luacheck@v1.1.0
+
+    # Build
+    - name: Build
+      id: love-build
+      uses: nhartland/love-build@v1-beta3
+      with:
+        app_name: "MovieMonsters"
+        love_version: "11.3"
+
+    # Upload the resulting artifacts
+    - name: Artifact for OSX
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_macos-build
+        path: ${{ steps.love-build.outputs.macos-filename }}
+
+    - name: Artifact for win32
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_win32-build
+        path: ${{ steps.love-build.outputs.win32-filename }}
+
+    - name: Artifact for win64
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_win64-build
+        path: ${{ steps.love-build.outputs.win64-filename }}
+
+    - name: Artifact for .love file
+      uses: actions/upload-artifact@v1
+      with:
+        name: mm_love-build
+        path: ${{ steps.love-build.outputs.love-filename }}
+
+    - name: Extract changelog for latest version
+      id: changelog
+      #if: startsWith(github.ref, 'refs/tags/') # on tags only
+      run: |
+        echo "CHANGES<<EOF" >> $GITHUB_ENV
+        sed -n '/## v/,/## v/{s/^## v.*//;p;}' CHANGELOG.md >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      #if: startsWith(github.ref, 'refs/tags/') # on tags only
+      with:
+        files: |
+          ${{ github.workspace }}/release/MovieMonsters_macos.zip
+          ${{ github.workspace }}/release/MovieMonsters_win32.zip
+          ${{ github.workspace }}/release/MovieMonsters_win64.zip
+          ${{ github.workspace }}/release/MovieMonsters.love
+        fail_on_unmatched_files: true
+        draft: true
+        body: |
+          ${{ env.CHANGES }}
