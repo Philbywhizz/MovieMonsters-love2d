@@ -12,10 +12,6 @@ Here is a list of libraries used by the MovieMonsters source code.
     A browser-based debug console for the LÖVE framework.
 
 
-- [gamestate](https://github.com/HDictus/hump/tree/temp-master)
-
-    Extracted from the HUMP libraries. Easy game state management
-
 - [concord](https://github.com/Tjakka5/Concord)
 
     Concord is a feature complete ECS for LÖVE. It's main focus is performance and ease of use. With Concord it is possibile to easily write fast and clean code.
@@ -23,3 +19,7 @@ Here is a list of libraries used by the MovieMonsters source code.
 - [hump](https://github.com/vrld/hump)
 
     hump is a small collection of tools for developing games with LÖVE.
+
+- [anim8](https://github.com/kikito/anim8)
+
+    An animation library for LÖVE
