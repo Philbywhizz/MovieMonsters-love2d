@@ -10,10 +10,6 @@ function love.load()
     gamestate.switch(title)
 end
 
-function love.update(dt)
-    require("lib.lovebird").update(dt)
-end
-
 function love.keypressed(key)
     -- Global keys across all states
     if key == "escape" then
