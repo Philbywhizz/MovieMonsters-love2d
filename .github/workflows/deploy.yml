@@ -4,7 +4,7 @@
 name: Main workflow
 
 # Manual trigger only for now
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 
 jobs:
   build-MovieMonsters:
