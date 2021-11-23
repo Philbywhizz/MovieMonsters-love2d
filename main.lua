@@ -2,12 +2,13 @@
 --- Movie Monsters
 ---
 
-local gamestate = require("lib.hump.gamestate")
-local title = require("state.title")
+local humpGameState = require("lib.hump.gamestate")
+local titleState = require("state.title")
+local gameState = require("state.game")
 
 function love.load()
-    gamestate.registerEvents()
-    gamestate.switch(title)
+    humpGameState.registerEvents()
+    humpGameState.switch(gameState)
 end
 
 function love.keypressed(key)
