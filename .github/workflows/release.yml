@@ -16,6 +16,8 @@ jobs:
     # Test
     - name: LuaCheck
       uses: nebularg/actions-luacheck@v1.1.0
+      with:
+        args: --only 0
 
     # Build
     - name: Build
