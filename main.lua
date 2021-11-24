@@ -2,18 +2,20 @@
 --- Movie Monsters
 ---
 
-local humpGameState = require("lib.hump.gamestate")
-local titleState = require("state.title")
-local gameState = require("state.game")
+-- Globals
+GameState = require 'lib.hump.gamestate'
+Inspect = require 'lib.inspect'
+Concord = require 'lib.concord'
 
-function love.load()
-    humpGameState.registerEvents()
-    humpGameState.switch(gameState)
-end
+ECS = {
+    c = Concord.components,
+    s = {}
+}
 
-function love.keypressed(key)
-    -- Global keys across all states
-    if key == "escape" then
-        love.event.quit()
-    end
-end
+Concord.utils.loadNamespace('components')
+Concord.utils.loadNamespace('systems', ECS.s)
+
+-- switch to the start state
+local startState = require("state.movie")
+GameState.registerEvents()
+GameState.switch(startState)

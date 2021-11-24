@@ -5,7 +5,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 
 ## Unreleased
 ## v0.0.0
-This version will simply setup and test any initial game libraries, testing utilities, github actions, etc. There is no gameplay for this version outside of an empty shell.
+This version will simply setup and test any initial game libraries, testing utilities, github actions, etc. There is no gameplay for this version outside of an empty shell. The main focus is to setup a working ECS framework using [Concord](https://github.com/Tjakka5/Concord).
 ### Added
 - .luacheckrc configuration file for [luacheck](https://github.com/mpeterv/luacheck).
 - Github community standards documentation.
