@@ -21,5 +21,10 @@ self = false
 -- disable warnings about secondary unused variables
 unused_secondaries = false
 
+-- ignore some codes
+ignore = {
+    "212", -- ignore unused arguments
+}
+
 -- ignore libraries: we don't care about those
 exclude_files = {"**/lib/**"}
