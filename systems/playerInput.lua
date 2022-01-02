@@ -11,12 +11,11 @@ function InputSystem:init() print("InputSystem:init()") end
 -- keypressed loopback function
 function InputSystem:keypressed(key)
     for _, e in ipairs(self.pool) do
-
-        print("InputSystem:keypressed()")
-        if love.keyboard.isDown('up') then print("FWD") end
-        if love.keyboard.isDown('down') then print("BACK") end
-        if love.keyboard.isDown('left') then print("LEFT") end
-        if love.keyboard.isDown('right') then print("RIGHT") end
+        -- create a component for each input command received
+        if love.keyboard.isDown('up') then e:give("movement", "FWD") end
+        if love.keyboard.isDown('down') then e:give("movement", "BACK") end
+        if love.keyboard.isDown('left') then e:give("movement", "LEFT") end
+        if love.keyboard.isDown('right') then e:give("movement", "RIGHT") end
     end
 end
 
