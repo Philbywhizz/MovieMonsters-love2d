@@ -2,7 +2,7 @@
 
 To keep things into perspective, this scope document will define each version of MovieMonster.
 
-## Version 0.1.0 - An empty shell testing ECS
+## Version 0.0.1 - An empty shell testing ECS
 
 I want to use an ECS framework rather than OOP, so to keep things simple this version will have the following conditions before being released:
 
