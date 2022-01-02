@@ -2,6 +2,10 @@
 
 To keep things into perspective, this scope document will define each version of MovieMonster.
 
+## Version 0.0.2 - Actor
+
+Create a simple actor that moves around the screen on its own (randomly). An actor has the same move functions as the monster (fwd/back/left/right). There is no spacial awareness yet (its all random)
+
 ## Version 0.0.1 - An empty shell testing ECS
 
 I want to use an ECS framework rather than OOP, so to keep things simple this version will have the following conditions before being released:
