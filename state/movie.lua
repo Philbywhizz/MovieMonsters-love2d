@@ -18,22 +18,11 @@ function movie:enter()
         ECS.s.input
     )
 
-    -- create 3 simple entities now for testing
-
-    -- one that moves and is drawble
+    -- create a test entity
     local entity_1 = Concord.entity(self.world)
-    :give("position", 100, 100)
-    :give("velocity", 100, 0)
-    :give("drawable")
-
-    -- one that is stationary
-    local entity_2 = Concord.entity(self.world)
     :give("position", 50, 50)
+    :give("heading", "E")
     :give("drawable")
-
-    -- one that isn't drawable (invisible)
-    local entity_3 = Concord.entity(self.world)
-    :give("position", 150, 150)
 
 end
 
