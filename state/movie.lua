@@ -15,12 +15,13 @@ function movie:enter()
     self.world:addSystems(
         ECS.s.draw,
         ECS.s.move,
-        ECS.s.input
+        ECS.s.playerInput
     )
 
     -- create a test entity
     local entity_1 = Concord.entity(self.world)
     :give("position", 50, 50)
+    :give("player")
     :give("heading", "E")
     :give("drawable")
 
