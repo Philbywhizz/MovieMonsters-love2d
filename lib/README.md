@@ -1,15 +1,13 @@
 # Libraries
-Here is a list of libraries used by the MovieMonsters source code.
+Libraries will be added/removed as required during the journey of development. Here is a list of libraries currently used by the MovieMonsters source code (in alphabetical particular order):
 
-(in no particular order)
+- [anim8](https://github.com/kikito/anim8)
 
-- [inspect](https://github.com/kikito/inspect.lua)
+    Animation library for LÖVE.
 
-    This library transforms any Lua value into a human-readable representation. It is especially useful for debugging errors in tables.
+- [brinevector](https://github.com/novemberisms/brinevector)
 
-- [lovebird](https://github.com/rxi/lovebird)
-
-    A browser-based debug console for the LÖVE framework.
+    A simple vector lua library for everyone!
 
 - [concord](https://github.com/Tjakka5/Concord)
 
@@ -19,6 +17,10 @@ Here is a list of libraries used by the MovieMonsters source code.
 
     hump is a small collection of tools for developing games with LÖVE.
 
-- [anim8](https://github.com/kikito/anim8)
+- [inspect](https://github.com/kikito/inspect.lua)
 
-    https://github.com/kikito/anim8
+    This library transforms any Lua value into a human-readable representation. It is especially useful for debugging errors in tables.
+
+- [lovebird](https://github.com/rxi/lovebird)
+
+    A browser-based debug console for the LÖVE framework.
