@@ -6,6 +6,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 ## Unreleased
 ### Added
 - Actor entities and a simple ActorAI system that moves entities around the screen randomly
+- [brinevector](https://github.com/novemberisms/brinevector) library added to the project
 ### Changed
 - Updated the draw component and draw system to support colors, now the monster is red so you can tell the difference between entities on the screen.
 
