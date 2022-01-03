@@ -2,8 +2,7 @@
 -- component: position
 --
 local component = Concord.component("position", function(component, x, y)
-    component.x = x or 0
-    component.y = y or 0
+    component.vector = Vector(x,y)
 end)
 
 return component
