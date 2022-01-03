@@ -4,6 +4,8 @@ All notable changes to MovieMonster will be documented in this file.
 The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) specification.
 
 ## Unreleased
+
+## v0.0.2
 ### Added
 - Actor entities and a simple ActorAI system that moves entities around the screen randomly
 - [brinevector](https://github.com/novemberisms/brinevector) library added to the project
