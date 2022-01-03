@@ -28,3 +28,5 @@ ignore = {
 
 -- ignore libraries: we don't care about those
 exclude_files = {"**/lib/**"}
+
+files["main.lua"] = {ignore = {"131"}}
