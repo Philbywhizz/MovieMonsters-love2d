@@ -51,11 +51,11 @@ local function stepEntity(e, stepDirection)
     end
 
     if stepDirection == "FWD" then
-        e.position.vector.x = e.position.vector.x + v.x
-        e.position.vector.y = e.position.vector.y + v.y
+        e.position.x = e.position.x + v.x
+        e.position.y = e.position.y + v.y
     elseif stepDirection == "BACK" then
-        e.position.vector.x = e.position.vector.x - v.x
-        e.position.vector.y = e.position.vector.y - v.y
+        e.position.x = e.position.x - v.x
+        e.position.y = e.position.y - v.y
     else
         error("Invalid step direction: " .. stepDirection)
     end
