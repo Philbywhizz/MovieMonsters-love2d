@@ -4,6 +4,10 @@ All notable changes to MovieMonster will be documented in this file.
 The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) specification.
 
 ## Unreleased
+### Added
+- Actor entities and a simple ActorAI system that moves entities around the screen randomly
+### Changed
+- Updated the draw component and draw system to support colors, now the monster is red so you can tell the difference between entities on the screen.
 
 ## v0.0.1
 Simple implementation of using an ECS library ([Concord](https://github.com/Tjakka5/Concord)) and create a player controlled entity with a few working systems in place. You can now move your monster around an empty screen with the arrow keys.
@@ -12,7 +16,6 @@ Simple implementation of using an ECS library ([Concord](https://github.com/Tjak
 - Player input system to send messages to other systems
 - Created just a single entity (the monster) for testing that the player can move around with the arrow keys.
 - Simple movement commands consist of FWD/BACK/LEFT/RIGHT
-
 ### Removed
 - Removed the velocity system and related components as it isn't in use
 

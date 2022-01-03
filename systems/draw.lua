@@ -9,6 +9,7 @@ end
 
 function DrawSystem:draw()
     for _,e in ipairs(self.pool) do
+        love.graphics.setColor(e.drawable.color)
         love.graphics.circle("fill", e.position.x, e.position.y, 5)
         if e:has("heading") then
             -- if entity has a heading, then draw it so we can visualize it

@@ -24,7 +24,7 @@ function movie:enter()
     :give("position", 50, 50)
     :give("player")
     :give("heading", "E")
-    :give("drawable")
+    :give("drawable", {1, 0, 0})
 
     -- create random actors
     for i=1,10 do
