@@ -15,15 +15,25 @@ function movie:enter()
     self.world:addSystems(
         ECS.s.draw,
         ECS.s.move,
-        ECS.s.playerInput
+        ECS.s.playerInput,
+        ECS.s.actorAI
     )
 
-    -- create a test entity
-    local entity_1 = Concord.entity(self.world)
+    -- create a test player
+    local player_1 = Concord.entity(self.world)
     :give("position", 50, 50)
     :give("player")
     :give("heading", "E")
     :give("drawable")
+
+    -- create random actors
+    for i=1,10 do
+        local actor_1 = Concord.entity(self.world)
+        :give("position", love.math.random() * love.graphics.getWidth(), love.math.random() * love.graphics.getHeight())
+        :give("actor")
+        :give("heading", "E")
+        :give("drawable")
+    end
 
 end
 
