@@ -4,7 +4,7 @@
 
 -- Globals
 GameState = require 'lib.hump.gamestate'
-Inspect = require 'lib.inspect'
+--Inspect = require 'lib.inspect'
 Concord = require 'lib.concord'
 
 ECS = {

@@ -20,15 +20,15 @@ function movie:enter()
     )
 
     -- create a test player
-    local player_1 = Concord.entity(self.world)
+    local _ = Concord.entity(self.world)
     :give("position", 50, 50)
     :give("player")
     :give("heading", "E")
     :give("drawable", {1, 0, 0})
 
     -- create random actors
-    for i=1,10 do
-        local actor_1 = Concord.entity(self.world)
+    for _=1,10 do
+        local _ = Concord.entity(self.world)
         :give("position", love.math.random() * love.graphics.getWidth(), love.math.random() * love.graphics.getHeight())
         :give("actor")
         :give("heading", "E")
