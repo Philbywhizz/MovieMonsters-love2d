@@ -4,6 +4,12 @@ All notable changes to MovieMonster will be documented in this file.
 The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) specification.
 
 ## Unreleased
+### Added
+
+### Changed
+- Gave drawable components a size parameter, and made the monster larger.
+- Adjusting the color for actor entity types.
+- Modified the Concord ECS library so you can set and get resources for a world. Borrowed the idea from [here](https://github.com/Tjakka5/Concord/pull/57/files).
 
 ## v0.0.2
 Basic implementation of Actor entities that move around the screen randomly. They don't do much, but it is cool to watch.
