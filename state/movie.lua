@@ -24,7 +24,7 @@ function movie:enter()
     :give("position", 50, 50)
     :give("player")
     :give("heading", "E")
-    :give("drawable", {1, 0, 0})
+    :give("drawable", 16, {1, 0, 0})
 
     -- create random actors
     for _=1,10 do
@@ -32,7 +32,7 @@ function movie:enter()
         :give("position", love.math.random() * love.graphics.getWidth(), love.math.random() * love.graphics.getHeight())
         :give("actor")
         :give("heading", "E")
-        :give("drawable")
+        :give("drawable", 4, {0, 1, 1})
     end
 
 end
