@@ -6,6 +6,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 ## Unreleased
 
 ## v0.0.2
+Basic implementation of Actor entities that move around the screen randomly. They don't do much, but it is cool to watch.
 ### Added
 - Actor entities and a simple ActorAI system that moves entities around the screen randomly
 - [brinevector](https://github.com/novemberisms/brinevector) library added to the project
