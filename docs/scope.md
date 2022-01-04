@@ -2,6 +2,10 @@
 
 To keep things into perspective, this scope document will define each version of MovieMonster.
 
+## Version 0.0.3 - Grid based movement
+
+Implementation of a grid based map for entity movement. The grid is not a fixed size and the cell size has not been determined yet so the code should have the ability to change these parameters for easy testing. Game entities moving around need to be restricted to the grid.
+
 ## Version 0.0.2 - Actor
 
 Create a simple actor that moves around the screen on its own (randomly). An actor has the same move functions as the monster (fwd/back/left/right). There is no spacial awareness yet (its all random)
