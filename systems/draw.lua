@@ -14,6 +14,17 @@ local function drawMapGrid(map, xOffset, yOffset, cellsize)
             love.graphics.rectangle("line", xOffset + (x - 1) * cellsize,
                                     yOffset + (y - 1) * cellsize, cellsize,
                                     cellsize)
+            if map[y][x] == 1 then
+                -- If we can't go into this cell then mark it with an 'x' visually
+                love.graphics.line(xOffset + (x - 1) * cellsize,
+                                   yOffset + (y - 1) * cellsize,
+                                   (xOffset + (x - 1) * cellsize) + cellsize,
+                                   (yOffset + (y - 1) * cellsize) + cellsize)
+                love.graphics.line((xOffset + (x - 1) * cellsize) + cellsize,
+                                   yOffset + (y - 1) * cellsize,
+                                   xOffset + (x - 1) * cellsize,
+                                   (yOffset + (y - 1) * cellsize) + cellsize)
+            end
         end
     end
 end
@@ -29,8 +40,8 @@ function DrawSystem:draw()
 
     -- draw each entity on the map
     for _, e in ipairs(self.pool) do
-        local originX = (e.position.x * cellsize + cellsize / 2) + offsetX
-        local originY = (e.position.y * cellsize + cellsize / 2) + offsetY
+        local originX = (e.position.x * cellsize + cellsize / 2) + (offsetX - cellsize)
+        local originY = (e.position.y * cellsize + cellsize / 2) + (offsetY - cellsize)
         love.graphics.setColor(e.drawable.color)
         love.graphics.circle("fill", originX, originY, e.drawable.size)
         if e:has("heading") then

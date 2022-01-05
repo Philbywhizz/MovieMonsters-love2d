@@ -5,7 +5,7 @@ local MoveSystem = Concord.system({pool = {"position", "heading", "movement"}})
 
 function MoveSystem:init() print("MoveSystem:init()") end
 
-local function turnEntity(e, direction)
+local function turnEntity(map, e, direction)
     if direction == "LEFT" then
         -- simply rotate our entity on the spot in the 4 possible compass directions
         if e.heading.dir == "N" then
@@ -33,39 +33,44 @@ local function turnEntity(e, direction)
     end
 end
 
-local function stepEntity(e, stepDirection)
-    local v = {}
-    v.x = 0
-    v.y = 0
+local function stepEntity(map, e, stepDirection)
+    local direction = Vector()
+    local currentPos = Vector(e.position.x, e.position.y)
 
     -- determine our position offset for the step
     if e.heading.dir == "N" then
-        v.y = -1
+        direction = Vector.dir("up")
     elseif e.heading.dir == "S" then
-        v.y = 1
+        direction = Vector.dir("down")
     elseif e.heading.dir == "E" then
-        v.x = 1
+        direction = Vector.dir("right")
     elseif e.heading.dir == "W" then
-        v.x = -1
+        direction = Vector.dir("left")
     end
 
     if stepDirection == "FWD" then
-        e.position.x = e.position.x + v.x
-        e.position.y = e.position.y + v.y
+        if map[currentPos.y + direction.y][currentPos.x + direction.x] == 0 then
+            local newPos = currentPos + direction
+            e.position.x, e.position.y = newPos:split()
+        end
     elseif stepDirection == "BACK" then
-        e.position.x = e.position.x - v.x
-        e.position.y = e.position.y - v.y
+        if map[currentPos.y - direction.y][currentPos.x - direction.x] == 0 then
+            local newPos = currentPos - direction
+            e.position.x, e.position.y = newPos:split()
+        end
     else
         error("Invalid step direction: " .. stepDirection)
     end
 end
 
 function MoveSystem:update(dt)
+    local map = self:getWorld():getResource("map")
+
     for _, e in ipairs(self.pool) do
         if e.movement.command == "FWD" or e.movement.command == "BACK" then
-            stepEntity(e, e.movement.command)
+            stepEntity(map, e, e.movement.command)
         elseif e.movement.command == "LEFT" or e.movement.command == "RIGHT" then
-            turnEntity(e, e.movement.command)
+            turnEntity(map, e, e.movement.command)
         else
             error("Invalid Movement command: " .. e.movement.command)
         end
