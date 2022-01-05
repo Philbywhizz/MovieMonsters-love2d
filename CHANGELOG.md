@@ -7,6 +7,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 ### Added
 - Added a simple grid map to the world and display it to the screen. Make everything operate on grid coordinates rather than screen coordinates to decouple the graphics from the logic.
 - Added collision detection and confined new entities to the map only.
+- Added in checking for valid map locations so we don't reference outside of the map, or out of bounds cells.
 ### Changed
 - Gave drawable components a size parameter, and made the monster larger.
 - Adjusting the color for actor entity types.

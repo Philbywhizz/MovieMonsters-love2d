@@ -48,18 +48,18 @@ local function stepEntity(map, e, stepDirection)
         direction = Vector.dir("left")
     end
 
+    local newPos
     if stepDirection == "FWD" then
-        if map[currentPos.y + direction.y][currentPos.x + direction.x] == 0 then
-            local newPos = currentPos + direction
-            e.position.x, e.position.y = newPos:split()
-        end
+        newPos = currentPos + direction
     elseif stepDirection == "BACK" then
-        if map[currentPos.y - direction.y][currentPos.x - direction.x] == 0 then
-            local newPos = currentPos - direction
-            e.position.x, e.position.y = newPos:split()
-        end
+        newPos = currentPos - direction
     else
         error("Invalid step direction: " .. stepDirection)
+    end
+
+    -- step entity into the new position
+    if map:valid(newPos) and map[newPos.y][newPos.x] == 0 then
+            e.position.x, e.position.y = newPos:split()
     end
 end
 

@@ -32,12 +32,17 @@ function movie:enter()
 
     -- create random actors
     for _=1,10 do
+        local pos = Vector()
+        while self.world:getResource("map"):invalid(pos) do
+            -- make sure the random entity position is a valid one
+            pos = Vector(love.math.random(1, self.world:getResource("map").sizeX - 1),
+            love.math.random(1, self.world:getResource("map").sizeY) - 1)
+        end
         local _ = Concord.entity(self.world)
-        :give("position", love.math.random(2, self.world:getResource("map").sizeX - 1),
-                love.math.random(2, self.world:getResource("map").sizeY) - 1)
-        :give("actor")
-        :give("heading", "E")
-        :give("drawable", 4, {0, 1, 1})
+            :give("position", pos.x, pos.y)
+            :give("actor")
+            :give("heading", "E")
+            :give("drawable", 4, {0, 1, 1})
     end
 end
 
