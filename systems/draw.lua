@@ -19,15 +19,18 @@ local function drawMapGrid(map, xOffset, yOffset, cellsize)
 end
 
 function DrawSystem:draw()
-    -- draw the map grid for reference
     local cellsize = 32
+    local offsetX = 32
+    local offsetY = 32
+
+    -- draw the map grid for reference
     local map = self:getWorld():getResource("map")
-    drawMapGrid(map, 32, 32, cellsize)
+    drawMapGrid(map, offsetX, offsetY, cellsize)
 
     -- draw each entity on the map
     for _, e in ipairs(self.pool) do
-        local originX = e.position.x * cellsize + cellsize / 2
-        local originY = e.position.y * cellsize + cellsize / 2
+        local originX = (e.position.x * cellsize + cellsize / 2) + offsetX
+        local originY = (e.position.y * cellsize + cellsize / 2) + offsetY
         love.graphics.setColor(e.drawable.color)
         love.graphics.circle("fill", originX, originY, e.drawable.size)
         if e:has("heading") then
