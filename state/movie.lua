@@ -3,6 +3,8 @@
 --
 local movie = {}
 
+local Map = require 'map.map'
+
 -- initialise the movie state once only
 function movie:init()
     print("movie:init()")
@@ -19,9 +21,11 @@ function movie:enter()
         ECS.s.actorAI
     )
 
+    self.world:setResource("map", Map)
+
     -- create a test player
     local _ = Concord.entity(self.world)
-    :give("position", 50, 50)
+    :give("position", 48, 48)
     :give("player")
     :give("heading", "E")
     :give("drawable", 16, {1, 0, 0})

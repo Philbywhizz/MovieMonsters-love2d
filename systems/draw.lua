@@ -8,6 +8,10 @@ function DrawSystem:init()
 end
 
 function DrawSystem:draw()
+    -- draw the map grid for reference
+    self:getWorld():getResource("map"):drawGrid(32,32)
+
+    -- draw each entity
     for _,e in ipairs(self.pool) do
         love.graphics.setColor(e.drawable.color)
         love.graphics.circle("fill", e.position.x, e.position.y, e.drawable.size)

@@ -34,7 +34,7 @@ local function turnEntity(e, direction)
 end
 
 local function stepEntity(e, stepDirection)
-    local stepSize = 16
+    local stepSize = 32
     local v = {}
     v.x = 0
     v.y = 0
