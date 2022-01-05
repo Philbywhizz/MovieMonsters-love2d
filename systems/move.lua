@@ -34,20 +34,19 @@ local function turnEntity(e, direction)
 end
 
 local function stepEntity(e, stepDirection)
-    local stepSize = 32
     local v = {}
     v.x = 0
     v.y = 0
 
     -- determine our position offset for the step
     if e.heading.dir == "N" then
-        v.y = -stepSize
+        v.y = -1
     elseif e.heading.dir == "S" then
-        v.y = stepSize
+        v.y = 1
     elseif e.heading.dir == "E" then
-        v.x = stepSize
+        v.x = 1
     elseif e.heading.dir == "W" then
-        v.x = -stepSize
+        v.x = -1
     end
 
     if stepDirection == "FWD" then

@@ -5,7 +5,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 
 ## Unreleased
 ### Added
-- Added a simple grid map to the world and display it to the screen
+- Added a simple grid map to the world and display it to the screen. Make everything operate on grid coordinates rather than screen coordinates to decouple the graphics from the logic.
 ### Changed
 - Gave drawable components a size parameter, and made the monster larger.
 - Adjusting the color for actor entity types.
