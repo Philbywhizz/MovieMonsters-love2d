@@ -6,6 +6,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 ## Unreleased
 
 ## v0.0.3
+Implementation of a grid based map for entity movement. The grid is not a fixed size and the cell size has not been determined yet so the code should have the ability to change these parameters for easy testing. Game entities moving around need to be restricted to the grid.
 ### Added
 - Added a simple grid map to the world and display it to the screen. Make everything operate on grid coordinates rather than screen coordinates to decouple the graphics from the logic.
 - Added collision detection and confined new entities to the map only.
