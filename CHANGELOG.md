@@ -4,6 +4,8 @@ All notable changes to MovieMonster will be documented in this file.
 The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) specification.
 
 ## Unreleased
+
+## v0.0.3
 ### Added
 - Added a simple grid map to the world and display it to the screen. Make everything operate on grid coordinates rather than screen coordinates to decouple the graphics from the logic.
 - Added collision detection and confined new entities to the map only.
