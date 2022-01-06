@@ -7,6 +7,10 @@ This particular movie is about a monster and a city, however instead of playing 
 
 How would you play our monster? Do you cause lots of destruction and chaos, or are you just wanting a bite to eat? Do you just want to find a friendly person to hug? It isn't going to be easy when you have the whole city against you!
 
+<p align="center">
+  <img src="assets/monster.png" />
+</p>
+
 *Note: This game is under heavy construction*
 
 ## Pre-Release/Prototype
