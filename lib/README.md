@@ -25,6 +25,10 @@ Libraries will be added/removed as required during the journey of development. H
 
     A browser-based debug console for the LÖVE framework.
 
+- [slab](https://github.com/flamendless/Slab)
+
+    Slab is an immediate mode GUI toolkit for the Love 2D framework.
+
 - [splashes](https://github.com/love2d-community/splashes)
 
     A collection of splash screens for LÖVE.
