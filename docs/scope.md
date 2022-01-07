@@ -1,6 +1,10 @@
 # Project Scope
 
-To keep things into perspective, this scope document will define each version of MovieMonster.
+To keep things into perspective and remain focused, this scope document will define each version of MovieMonster.
+
+## Version 0.0.4 -
+
+Setup of game states such as main menus, splash screens, pausing, etc. Many of the menus are placeholders for now and can be fleshed out later on.
 
 ## Version 0.0.3 - Grid based movement
 
