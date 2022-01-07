@@ -3,6 +3,8 @@
 --
 local movie = {}
 
+local pause = require 'state.pause'
+
 local Map = require 'map.map'
 
 -- initialise the movie state once only
@@ -68,6 +70,9 @@ function movie:keypressed(key)
     if key == "escape" then
         -- emergency abort key
         love.event.quit()
+    end
+    if key == "p" then
+        GameState.push(pause)
     end
 end
 
