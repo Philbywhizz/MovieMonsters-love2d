@@ -17,6 +17,6 @@ Concord.utils.loadNamespace('components')
 Concord.utils.loadNamespace('systems', ECS.s)
 
 -- switch to the start state
-local startState = require("state.movie")
+local startState = require("state.splash")
 GameState.registerEvents()
 GameState.switch(startState)
