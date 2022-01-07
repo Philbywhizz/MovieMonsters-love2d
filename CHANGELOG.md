@@ -4,6 +4,8 @@ All notable changes to MovieMonster will be documented in this file.
 The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) specification.
 
 ## Unreleased
+### Added
+- [splashes](https://github.com/love2d-community/splashes) A collection of splash screens for LÖVE.
 
 ## v0.0.3
 Implementation of a grid based map for entity movement. The grid is not a fixed size and the cell size has not been determined yet so the code should have the ability to change these parameters for easy testing. Game entities moving around need to be restricted to the grid.

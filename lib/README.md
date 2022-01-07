@@ -24,3 +24,7 @@ Libraries will be added/removed as required during the journey of development. H
 - [lovebird](https://github.com/rxi/lovebird)
 
     A browser-based debug console for the LÖVE framework.
+
+- [splashes](https://github.com/love2d-community/splashes)
+
+    A collection of splash screens for LÖVE.
