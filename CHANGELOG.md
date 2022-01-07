@@ -9,6 +9,7 @@ The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.
 - Splash screen gamestate is now the initial gamestate on startup.
 - A pause screen during the main game by pressing 'p'. 'p' unpauses the game.
 - [slab](https://github.com/flamendless/Slab) is an immediate mode GUI toolkit for the Love 2D framework.
+- Added a crude main menu using the [slab](https://github.com/flamendless/Slab) library. It's not pretty but it does the job for now.
 
 ## v0.0.3
 Implementation of a grid based map for entity movement. The grid is not a fixed size and the cell size has not been determined yet so the code should have the ability to change these parameters for easy testing. Game entities moving around need to be restricted to the grid.

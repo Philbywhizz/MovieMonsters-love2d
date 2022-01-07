@@ -68,8 +68,7 @@ end
 function movie:keypressed(key)
     self.world:emit("keypressed", key)
     if key == "escape" then
-        -- emergency abort key
-        love.event.quit()
+        GameState.pop()
     end
     if key == "p" then
         GameState.push(pause)

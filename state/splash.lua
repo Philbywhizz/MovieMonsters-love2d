@@ -4,7 +4,7 @@
 
 local splash = {}
 
-local nextState = require("state.movie")
+local nextState = require("state.mainmenu")
 local splashLib = require("lib.splashes")
 
 function splash:init()
@@ -34,7 +34,7 @@ function splash:keypressed(key)
 end
 
 function splash:leave()
-    print("splash:clear()")
+    print("splash:leave()")
 end
 
 return splash
