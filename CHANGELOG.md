@@ -4,6 +4,9 @@ All notable changes to MovieMonster will be documented in this file.
 The file format is based on [Keep a Change Log](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) specification.
 
 ## Unreleased
+
+## v0.0.4
+Setup of game states such as main menus, splash screens, pausing, etc. Many of the menus are placeholders for now and can be fleshed out later on.
 ### Added
 - [splashes](https://github.com/love2d-community/splashes) A collection of splash screens for LÖVE.
 - Splash screen gamestate is now the initial gamestate on startup.

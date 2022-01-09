@@ -2,7 +2,7 @@
 
 To keep things into perspective and remain focused, this scope document will define each version of MovieMonster.
 
-## Version 0.0.4 -
+## Version 0.0.4 - GameState infrastructure
 
 Setup of game states such as main menus, splash screens, pausing, etc. Many of the menus are placeholders for now and can be fleshed out later on.
 
